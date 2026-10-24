@@ -18,7 +18,7 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({ onOpenAppointm
       {/* Floating WhatsApp Button (Bottom Right Desktop & Mobile) */}
       <div className="fixed bottom-18 sm:bottom-20 md:bottom-8 right-3 sm:right-6 z-40 flex flex-col items-end gap-2">
         {showTooltip && (
-          <div className="bg-slate-900 text-white text-[11px] sm:text-xs py-1.5 px-3 rounded-xl shadow-xl flex items-center gap-2 animate-bounce border border-slate-700">
+          <div className="bg-slate-900 text-white text-[11px] sm:text-xs py-1.5 px-3 rounded-xl shadow-xl flex items-center gap-2 border border-slate-700 animate-fade-in">
             <span>Need Help? Chat on WhatsApp</span>
             <button
               onClick={() => setShowTooltip(false)}
@@ -34,11 +34,10 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({ onOpenAppointm
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-12 h-12 sm:w-14 sm:h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-105 transition-all group relative focus:outline-none focus:ring-4 focus:ring-emerald-300"
+          className="w-12 h-12 sm:w-14 sm:h-14 bg-emerald-600 hover:bg-emerald-500 text-white rounded-full flex items-center justify-center shadow-xl hover:scale-105 transition-all group relative focus:outline-none focus:ring-4 focus:ring-emerald-300"
           aria-label="Chat on WhatsApp with Athree Hospital"
         >
-          <span className="absolute -inset-1 rounded-full bg-emerald-400 opacity-30 animate-ping"></span>
-          <MessageSquare className="w-6 h-6 sm:w-7 sm:h-7 relative z-10 fill-white stroke-emerald-500" />
+          <MessageSquare className="w-6 h-6 sm:w-7 sm:h-7 relative z-10 fill-white stroke-emerald-600" />
         </a>
       </div>
 

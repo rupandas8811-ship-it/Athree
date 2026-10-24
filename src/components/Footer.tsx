@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10 pb-10 border-b border-slate-800">
           {/* Col 1 & 2: Hospital Info & Logo */}
           <div className="sm:col-span-2 space-y-4">
-            <AthreeLogo variant="dark" />
+            <AthreeLogo variant="dark" size="md" />
             <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-sm">
               Athree Hospital is a premier multi-specialty healthcare facility delivering patient-centered surgical excellence in General & Laparoscopic Surgery, Women's Health, and Spine Care.
             </p>

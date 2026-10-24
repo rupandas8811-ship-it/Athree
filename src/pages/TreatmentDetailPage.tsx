@@ -115,18 +115,60 @@ export const TreatmentDetailPage: React.FC<TreatmentDetailPageProps> = ({ onOpen
       </section>
 
       {/* OVERVIEW / UNDERSTANDING THE CONDITION */}
-      <section className="py-10 sm:py-12 bg-white border-b border-slate-200">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3 sm:space-y-4">
-          <div className="flex items-center gap-2 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-blue-900">
-            <Stethoscope className="w-4 h-4 text-cyan-600 shrink-0" />
-            <span>Understanding The Health Problem</span>
+      <section className="py-10 sm:py-14 bg-white border-b border-slate-200">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-7 space-y-3 sm:space-y-4">
+              <div className="flex items-center gap-2 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-blue-900">
+                <Stethoscope className="w-4 h-4 text-cyan-600 shrink-0" />
+                <span>Understanding The Health Problem</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+                What is {treatment.title}?
+              </h2>
+              <p className="text-slate-700 text-xs sm:text-sm md:text-base leading-relaxed">
+                {treatment.overview}
+              </p>
+              <div className="pt-2 flex items-center gap-3 text-xs text-slate-500 font-medium">
+                <span className="flex items-center gap-1 text-cyan-700 font-semibold">
+                  <ShieldCheck className="w-4 h-4 text-cyan-600" />
+                  Evidence-Based Clinical Protocol
+                </span>
+                <span>·</span>
+                <span>Bengaluru Surgical Center</span>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5">
+              <div className="rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm bg-slate-50 relative group">
+                <div className="aspect-[16/10] sm:aspect-[4/3] md:aspect-[16/10] w-full overflow-hidden bg-slate-100 relative">
+                  <img
+                    src={
+                      treatment.categoryId === 'general-surgery'
+                        ? 'https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=800&q=80'
+                        : treatment.categoryId === 'womens-health'
+                        ? 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80'
+                        : 'https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=800&q=80'
+                    }
+                    alt={`${treatment.title} care and consultation at Athree Hospital`}
+                    loading="lazy"
+                    decoding="async"
+                    width="800"
+                    height="500"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute bottom-2.5 left-3 right-3 text-white text-xs font-semibold drop-shadow-xs">
+                    Bengaluru Surgical Center
+                  </div>
+                </div>
+                <div className="p-3 bg-white border-t border-slate-100 flex items-center justify-between text-xs text-slate-600">
+                  <span className="font-semibold text-slate-900">{treatment.categoryTitle}</span>
+                  <span className="text-cyan-700 font-medium">Minimally Invasive Care</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
-            What is {treatment.title}?
-          </h2>
-          <p className="text-slate-700 text-xs sm:text-sm md:text-base leading-relaxed">
-            {treatment.overview}
-          </p>
         </div>
       </section>
 

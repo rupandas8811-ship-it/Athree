@@ -37,12 +37,23 @@ export interface TreatmentCategory {
   name: string;
   description: string;
   iconName: string;
+  imageUrl?: string;
+  imageAlt?: string;
   treatments: {
     id: string;
     slug: string;
     title: string;
     shortDesc: string;
   }[];
+}
+
+export interface HospitalFacility {
+  id: string;
+  title: string;
+  description: string;
+  badge: string;
+  imageUrl?: string;
+  imageAlt?: string;
 }
 
 export interface Doctor {

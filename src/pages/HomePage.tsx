@@ -5,7 +5,27 @@ import { SeoHead } from '../components/SeoHead';
 import { FaqAccordion } from '../components/FaqAccordion';
 import { AppointmentForm } from '../components/AppointmentForm';
 import { LiquidMorphHeroBlobs } from '../components/LiquidMorphHeroBlobs';
-import { Phone, Calendar, MessageSquare, ShieldCheck, ArrowRight, Activity, HeartHandshake, Shield, UserCheck, Sparkles, Clock, Award, Users, FileText, Heart, CheckCircle2 } from 'lucide-react';
+import {
+  Phone,
+  Calendar,
+  MessageSquare,
+  ShieldCheck,
+  ArrowRight,
+  Activity,
+  HeartHandshake,
+  Shield,
+  UserCheck,
+  Sparkles,
+  Clock,
+  Award,
+  Users,
+  FileText,
+  Heart,
+  CheckCircle2,
+  Stethoscope,
+  Building2,
+  Check
+} from 'lucide-react';
 
 interface HomePageProps {
   onOpenAppointment: (treatmentId?: string) => void;
@@ -14,64 +34,70 @@ interface HomePageProps {
 export const HomePage: React.FC<HomePageProps> = ({ onOpenAppointment }) => {
   const getCategoryIcon = (iconName: string) => {
     switch (iconName) {
-      case 'Activity': return <Activity className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-600 shrink-0" />;
-      case 'HeartHandshake': return <HeartHandshake className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600 shrink-0" />;
-      case 'Shield': return <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 shrink-0" />;
-      default: return <Activity className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-600 shrink-0" />;
+      case 'Activity': return <Activity className="w-5 h-5 text-cyan-600 shrink-0" />;
+      case 'HeartHandshake': return <HeartHandshake className="w-5 h-5 text-purple-600 shrink-0" />;
+      case 'Shield': return <Shield className="w-5 h-5 text-blue-600 shrink-0" />;
+      default: return <Activity className="w-5 h-5 text-cyan-600 shrink-0" />;
     }
   };
 
   const getReasonIcon = (idx: number) => {
     switch (idx) {
-      case 0: return <FileText className="w-6 h-6 text-blue-900" />;
-      case 1: return <Users className="w-6 h-6 text-blue-900" />;
-      case 2: return <ShieldCheck className="w-6 h-6 text-blue-900" />;
-      case 3: return <Heart className="w-6 h-6 text-blue-900" />;
-      default: return <CheckCircle2 className="w-6 h-6 text-blue-900" />;
+      case 0: return <FileText className="w-5 h-5 text-blue-900" />;
+      case 1: return <Users className="w-5 h-5 text-blue-900" />;
+      case 2: return <ShieldCheck className="w-5 h-5 text-blue-900" />;
+      case 3: return <Heart className="w-5 h-5 text-blue-900" />;
+      default: return <CheckCircle2 className="w-5 h-5 text-blue-900" />;
     }
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 overflow-x-hidden">
+    <div className="min-h-screen bg-slate-50 overflow-x-hidden selection:bg-cyan-500 selection:text-slate-950">
       <SeoHead
         title="Athree Hospital – Advanced General Surgery, Women's Health & Spine Care"
-        description="Athree Hospital provides patient-friendly healthcare in General Surgery, Women's Health, and Spine Care. Explore treatment options and book consultations."
+        description="Athree Hospital provides patient-friendly healthcare in General Surgery, Women's Health, and Spine Care in Bengaluru. Explore treatment options and book consultations."
       />
 
-      {/* SECTION 2: HERO SECTION WITH LIQUID MORPHING AMBIENT BACKGROUND */}
-      <section className="relative bg-gradient-to-br from-blue-950 via-slate-900 to-blue-900 text-white pt-8 sm:pt-12 pb-16 sm:pb-20 overflow-hidden">
-        {/* Liquid Morphing Animated Background Blobs */}
+      {/* SECTION 1: HERO SECTION WITH LIQUID MORPHING AMBIENT BACKGROUND */}
+      <section className="relative bg-gradient-to-br from-blue-950 via-slate-900 to-blue-900 text-white pt-8 sm:pt-14 pb-16 sm:pb-24 overflow-hidden">
+        {/* Ambient Liquid Morphing Blobs */}
         <LiquidMorphHeroBlobs />
 
-        {/* Subtle grid backdrop overlay */}
-        <div className="absolute inset-0 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none"></div>
+        {/* Subtle grid pattern overlay */}
+        <div className="absolute inset-0 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:28px_28px] opacity-10 pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left Column: Headlines & CTAs */}
-            <div className="lg:col-span-7 space-y-4 sm:space-y-6">
-              <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-1.5 rounded-full bg-blue-900/80 border border-blue-700/60 text-cyan-300 text-[11px] sm:text-xs font-semibold backdrop-blur-md flex-wrap shadow-sm">
-                <span className="flex items-center gap-1">
-                  <ShieldCheck className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
-                  Multi-Specialty Healthcare
+            {/* Left Column: Headlines, Trust Signals, and CTAs */}
+            <div className="lg:col-span-7 space-y-5 sm:space-y-6">
+              {/* Unboxed Metadata Tagline */}
+              <div className="flex items-center gap-2 text-xs font-semibold text-cyan-300 flex-wrap">
+                <span className="flex items-center gap-1.5 text-white font-bold">
+                  <ShieldCheck className="w-4 h-4 text-cyan-400 shrink-0" />
+                  Athree Multi-Specialty Hospital
                 </span>
-                <span className="text-slate-400">·</span>
-                <span className="text-slate-200">24/7 Casualty Care</span>
+                <span className="text-slate-500" aria-hidden="true">·</span>
+                <span className="text-cyan-200">NABH Aligned Standards</span>
+                <span className="text-slate-500" aria-hidden="true">·</span>
+                <span className="text-slate-300">Bengaluru Surgical Center</span>
               </div>
 
-              <h1 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
-                The Right Care Starts with the <span className="text-cyan-400 relative inline-block">
+              {/* Main Headline */}
+              <h1 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.18]">
+                The Right Care Starts with the{' '}
+                <span className="text-cyan-400 relative inline-block">
                   Right Consultation
-                  <span className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-cyan-400 via-blue-400 to-transparent rounded-full opacity-80"></span>
+                  <span className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-cyan-400 via-sky-400 to-transparent rounded-full opacity-80"></span>
                 </span>
               </h1>
 
+              {/* Supporting Plain-English Text */}
               <p className="text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed max-w-2xl">
                 Looking for treatment for a health problem? Explore treatment options at Athree Hospital and book a consultation with our medical team.
               </p>
 
               {/* CTAs: Book an Appointment, Call Now, WhatsApp Us */}
-              <div className="pt-2 flex flex-col xs:flex-row flex-wrap items-stretch sm:items-center gap-2.5 sm:gap-3">
+              <div className="pt-1 flex flex-col xs:flex-row flex-wrap items-stretch sm:items-center gap-2.5 sm:gap-3">
                 <button
                   onClick={() => onOpenAppointment()}
                   className="px-5 sm:px-6 py-3.5 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs sm:text-sm rounded-xl transition-all shadow-lg hover:shadow-cyan-500/25 inline-flex items-center justify-center gap-2 group min-h-[44px]"
@@ -99,15 +125,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAppointment }) => {
                 </a>
               </div>
 
-              {/* Compact Verified Credentials Strip */}
-              <div className="pt-4 sm:pt-6 border-t border-slate-800/90 grid grid-cols-2 sm:grid-cols-4 gap-3 text-[11px] sm:text-xs">
+              {/* Patient-Focused Benefits Strip */}
+              <div className="pt-4 sm:pt-6 border-t border-slate-800/80 grid grid-cols-2 sm:grid-cols-4 gap-3 text-[11px] sm:text-xs">
                 <div className="flex items-center gap-1.5 text-slate-300">
                   <Award className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
                   <span>NABH Standard</span>
                 </div>
                 <div className="flex items-center gap-1.5 text-slate-300">
                   <Clock className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                  <span>24/7 In-Patient</span>
+                  <span>24/7 Casualty Care</span>
                 </div>
                 <div className="flex items-center gap-1.5 text-slate-300">
                   <UserCheck className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
@@ -120,33 +146,70 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAppointment }) => {
               </div>
             </div>
 
-            {/* Right Column: Quick Booking Form Card with Liquid Glass Effect */}
-            <div className="lg:col-span-5">
-              <div className="liquid-glass-card text-slate-900 rounded-2xl p-4 sm:p-6 shadow-2xl border border-white/60 backdrop-blur-md relative overflow-hidden transition-all duration-300 hover:shadow-cyan-500/10">
-                <div className="absolute top-0 right-0 w-24 h-24 bg-cyan-400/20 rounded-bl-full opacity-60 pointer-events-none animate-liquid-morph"></div>
-                <div className="mb-3 pb-2 border-b border-slate-200/80">
-                  <span className="text-[11px] font-bold text-blue-900 uppercase tracking-wider block">Quick Consultation</span>
-                  <h3 className="text-base sm:text-lg font-bold text-slate-900">Schedule Specialist Visit</h3>
+            {/* Right Column: Hero Doctor Consultation Photograph + Quick Priority Booking Card */}
+            <div className="lg:col-span-5 space-y-4">
+              <div className="liquid-glass-card rounded-2xl overflow-hidden shadow-2xl border border-white/60 relative">
+                {/* Doctor Consultation Realistic Medical Photography: Responsive Aspect Ratio Container */}
+                <div className="relative aspect-[16/10] sm:aspect-[4/3] lg:aspect-[16/10] w-full overflow-hidden bg-slate-900">
+                  <img
+                    src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=1000&q=85"
+                    alt="Doctor listening attentively to patient during consultation at Athree Hospital"
+                    loading="eager"
+                    decoding="async"
+                    width="1000"
+                    height="625"
+                    className="w-full h-full object-cover object-[center_28%]"
+                  />
+                  {/* Subtle readable gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent pointer-events-none" />
+
+                  {/* Overlaid consultation badge */}
+                  <div className="absolute bottom-3 left-3.5 right-3.5 flex items-center justify-between text-white text-xs">
+                    <span className="font-semibold text-white flex items-center gap-1.5 drop-shadow-sm">
+                      <Stethoscope className="w-4 h-4 text-cyan-400 shrink-0" />
+                      Specialist Medical Consultation
+                    </span>
+                    <span className="text-[11px] font-bold text-cyan-300 bg-slate-900/80 px-2 py-0.5 rounded backdrop-blur-xs">
+                      OPD & Day Care
+                    </span>
+                  </div>
                 </div>
-                <AppointmentForm compact onSuccess={() => {}} />
+
+                {/* Priority Consultation Form Area */}
+                <div className="p-4 sm:p-5">
+                  <div className="mb-3 pb-2 border-b border-slate-200/80 flex items-center justify-between">
+                    <div>
+                      <span className="text-[10px] sm:text-[11px] font-bold text-blue-900 uppercase tracking-wider block">
+                        Direct Appointment
+                      </span>
+                      <h3 className="text-sm sm:text-base font-bold text-slate-900">
+                        Schedule Specialist Visit
+                      </h3>
+                    </div>
+                    <span className="text-[11px] text-slate-500 font-medium">Quick Confirmation</span>
+                  </div>
+                  <AppointmentForm compact onSuccess={() => {}} />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 3: TREATMENT SPECIALTIES (3 CARDS WITH LIQUID HIGHLIGHTS) */}
+      {/* SECTION 2: TREATMENT SPECIALTIES (3 RESPONSIVE IMAGE CARDS) */}
       <section id="treatments" className="py-12 sm:py-16 bg-slate-50 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-10 space-y-2.5">
-            <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-blue-900 bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
-              Specialized Medical Centers
-            </span>
+          <div className="text-center max-w-3xl mx-auto mb-10 space-y-2">
+            <div className="flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider text-blue-900">
+              <span>Center of Excellence</span>
+              <span className="text-slate-400">·</span>
+              <span>Advanced Keyhole & Laser Procedures</span>
+            </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
               Treatment Specialties
             </h2>
             <p className="text-slate-600 text-xs sm:text-sm md:text-base leading-relaxed">
-              Click any treatment below to read simple explanations, common symptoms, diagnostic checks, and treatment options.
+              Explore specialized departments at Athree Hospital. Click any treatment below to read plain-English explanations, symptoms, and surgical or non-surgical options.
             </p>
           </div>
 
@@ -154,47 +217,73 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAppointment }) => {
             {TREATMENT_CATEGORIES.map((cat) => (
               <div
                 key={cat.id}
-                className="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-cyan-200 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
+                className="bg-white rounded-2xl overflow-hidden border border-slate-200/90 shadow-xs hover:shadow-xl hover:border-cyan-300 transition-all duration-300 flex flex-col justify-between group"
               >
-                {/* Subtle Liquid accent glow on hover */}
-                <div className="absolute -top-12 -right-12 w-28 h-28 bg-cyan-100/50 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
-
                 <div>
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-3 sm:mb-4 border border-blue-100 group-hover:bg-cyan-50 group-hover:border-cyan-200 transition-colors">
-                    {getCategoryIcon(cat.iconName)}
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-1.5">{cat.name}</h3>
-                  <p className="text-slate-600 text-xs sm:text-sm mb-4 leading-relaxed">
-                    {cat.description}
-                  </p>
-
-                  <div className="space-y-2 pt-2 border-t border-slate-100">
-                    {cat.treatments.map((t) => (
-                      <Link
-                        key={t.id}
-                        to={`/treatments/${t.slug}`}
-                        className="group/item flex items-start justify-between p-2 sm:p-2.5 rounded-xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-200"
-                      >
-                        <div className="pr-2">
-                          <div className="text-xs sm:text-sm font-semibold text-slate-900 group-hover/item:text-blue-900 transition-colors">
-                            {t.title}
+                  {/* Category Photography Container with fixed Aspect Ratio to avoid mobile clipping */}
+                  {cat.imageUrl && (
+                    <div className="relative aspect-[16/9] w-full overflow-hidden bg-slate-100">
+                      <img
+                        src={cat.imageUrl}
+                        alt={cat.imageAlt || cat.name}
+                        loading="lazy"
+                        decoding="async"
+                        width="800"
+                        height="450"
+                        className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/30 to-transparent" />
+                      <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white">
+                        <div className="flex items-center gap-2">
+                          <div className="w-8 h-8 rounded-lg bg-blue-900/90 backdrop-blur-xs flex items-center justify-center text-cyan-300">
+                            {getCategoryIcon(cat.iconName)}
                           </div>
-                          <div className="text-[11px] sm:text-xs text-slate-500 line-clamp-1">{t.shortDesc}</div>
+                          <span className="text-sm font-bold tracking-tight text-white drop-shadow-xs">
+                            {cat.name}
+                          </span>
                         </div>
-                        <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover/item:text-blue-900 group-hover/item:translate-x-1 transition-all shrink-0 mt-1" />
-                      </Link>
-                    ))}
+                        <span className="text-[11px] font-semibold text-cyan-300 bg-slate-900/80 px-2 py-0.5 rounded backdrop-blur-xs">
+                          {cat.treatments.length} Procedures
+                        </span>
+                      </div>
+                    </div>
+                  )}
+
+                  <div className="p-5 sm:p-6 pb-2">
+                    <p className="text-slate-600 text-xs sm:text-sm mb-4 leading-relaxed">
+                      {cat.description}
+                    </p>
+
+                    <div className="space-y-1.5 pt-2 border-t border-slate-100">
+                      {cat.treatments.map((t) => (
+                        <Link
+                          key={t.id}
+                          to={`/treatments/${t.slug}`}
+                          className="group/item flex items-start justify-between p-2 sm:p-2.5 rounded-xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-200"
+                        >
+                          <div className="pr-2">
+                            <div className="text-xs sm:text-sm font-semibold text-slate-900 group-hover/item:text-blue-900 transition-colors">
+                              {t.title}
+                            </div>
+                            <div className="text-[11px] sm:text-xs text-slate-500 line-clamp-1">{t.shortDesc}</div>
+                          </div>
+                          <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover/item:text-blue-900 group-hover/item:translate-x-1 transition-all shrink-0 mt-1" />
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
-                <div className="pt-4 mt-4 border-t border-slate-100">
-                  <Link
-                    to={`/treatments/${cat.treatments[0].slug}`}
-                    className="w-full py-2.5 px-4 bg-slate-100 hover:bg-blue-900 hover:text-white text-blue-900 font-semibold text-xs rounded-xl transition-all flex items-center justify-center gap-1.5 shadow-xs"
-                  >
-                    <span>Explore Treatments</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
+                <div className="p-5 sm:p-6 pt-0">
+                  <div className="pt-3 border-t border-slate-100">
+                    <Link
+                      to={`/treatments/${cat.treatments[0].slug}`}
+                      className="w-full py-2.5 px-4 bg-slate-100 hover:bg-blue-900 hover:text-white text-blue-900 font-semibold text-xs rounded-xl transition-all flex items-center justify-center gap-1.5 shadow-2xs"
+                    >
+                      <span>Explore {cat.name}</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
@@ -202,7 +291,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAppointment }) => {
         </div>
       </section>
 
-      {/* SECTION 4: WHY CHOOSE ATHREE HOSPITAL? (4 ICON CARDS) */}
+      {/* SECTION 3: WHY CHOOSE ATHREE HOSPITAL? (4 ICON CARDS) */}
       <section id="why-choose-us" className="py-12 sm:py-16 bg-white border-y border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
@@ -210,7 +299,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAppointment }) => {
               Why Choose Athree Hospital?
             </h2>
             <p className="text-slate-600 text-xs sm:text-sm">
-              We deliver compassionate, transparent, patient-centered medical care.
+              We deliver compassionate, transparent, patient-centered medical care in South Bengaluru.
             </p>
           </div>
 
@@ -233,13 +322,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAppointment }) => {
         </div>
       </section>
 
-      {/* SECTION 5: HOW TO GET STARTED (3-STEP PROCESS) */}
+      {/* SECTION 4: HOW TO GET STARTED (3-STEP SIMPLE JOURNEY) */}
       <section className="py-12 sm:py-16 bg-slate-900 text-white relative overflow-hidden">
         <div className="absolute top-0 right-1/4 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl animate-liquid-morph pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
-            <span className="text-[11px] sm:text-xs font-bold text-cyan-400 uppercase tracking-wider">Simple Process</span>
+            <span className="text-[11px] sm:text-xs font-bold text-cyan-400 uppercase tracking-wider">Patient Journey</span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white">How to Get Started</h2>
             <p className="text-slate-400 text-xs sm:text-sm">
               Taking the next step toward better health is simple and straightforward.
@@ -280,38 +369,71 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAppointment }) => {
         </div>
       </section>
 
-      {/* SECTION 6: HOSPITAL FACILITIES */}
+      {/* SECTION 5: HOSPITAL FACILITIES & INFRASTRUCTURE */}
       <section className="py-12 sm:py-16 bg-white border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">Hospital Facilities</h2>
+            <div className="flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider text-blue-900">
+              <Building2 className="w-4 h-4 text-cyan-600" />
+              <span>Modern Infrastructure</span>
+              <span className="text-slate-400">·</span>
+              <span>NABH & ISO Compliant</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+              Hospital Facilities
+            </h2>
             <p className="text-slate-600 text-xs sm:text-sm">
               Modern keyhole surgical suites, in-house diagnostics, and comfortable patient recovery units.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
             {HOSPITAL_FACILITIES.map((fac) => (
-              <div key={fac.id} className="bg-slate-50 rounded-2xl p-4 sm:p-5 border border-slate-200/90 shadow-sm space-y-2.5">
-                <span className="inline-block px-2.5 py-0.5 bg-cyan-50 text-cyan-800 text-[10px] sm:text-[11px] font-bold rounded-md">
-                  {fac.badge}
-                </span>
-                <h3 className="text-sm sm:text-base font-bold text-slate-900">{fac.title}</h3>
-                <p className="text-xs text-slate-600 leading-relaxed">{fac.description}</p>
+              <div
+                key={fac.id}
+                className="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200/90 shadow-2xs hover:shadow-md transition-all flex flex-col group"
+              >
+                {fac.imageUrl && (
+                  <div className="aspect-[16/10] w-full overflow-hidden relative bg-slate-200">
+                    <img
+                      src={fac.imageUrl}
+                      alt={fac.imageAlt || fac.title}
+                      loading="lazy"
+                      decoding="async"
+                      width="600"
+                      height="375"
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent pointer-events-none" />
+                    <span className="absolute top-3 left-3 px-2.5 py-1 bg-blue-900/90 text-cyan-300 text-[10px] sm:text-[11px] font-bold rounded-lg backdrop-blur-xs shadow-2xs">
+                      {fac.badge}
+                    </span>
+                  </div>
+                )}
+                <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between space-y-2">
+                  <div>
+                    <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-blue-900 transition-colors">
+                      {fac.title}
+                    </h3>
+                    <p className="text-xs text-slate-600 leading-relaxed mt-1.5">
+                      {fac.description}
+                    </p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* SECTION 8: FAQ ACCORDION */}
-      <section className="py-12 sm:py-16 bg-slate-50">
+      {/* SECTION 6: FAQ ACCORDION */}
+      <section className="py-12 sm:py-16 bg-slate-50 border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FaqAccordion faqs={GENERAL_FAQS} />
         </div>
       </section>
 
-      {/* SECTION 9: FINAL CTA NAVY BANNER WITH LIQUID AMBIENT GLOW */}
+      {/* SECTION 7: FINAL CALL-TO-ACTION BANNER WITH LIQUID AMBIENT GLOW */}
       <section className="py-12 sm:py-16 bg-gradient-to-r from-blue-950 via-slate-900 to-blue-900 text-white relative overflow-hidden">
         <div className="absolute -bottom-10 -left-10 w-72 h-72 bg-cyan-500/20 rounded-full blur-3xl animate-liquid-morph pointer-events-none"></div>
 
@@ -320,7 +442,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAppointment }) => {
             Take the First Step Toward the Right Care
           </h2>
           <p className="text-slate-300 text-xs sm:text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
-            Have questions about a condition or treatment? Contact Athree Hospital to discuss your consultation options.
+            Have questions about a condition or treatment? Contact Athree Hospital to discuss your consultation options with our specialists.
           </p>
 
           <div className="pt-2 flex flex-col xs:flex-row flex-wrap justify-center gap-3">

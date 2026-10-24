@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { AthreeLogo } from './AthreeLogo';
 import { TREATMENT_CATEGORIES, ATHREE_HOSPITAL_CONFIG } from '../data/hospitalData';
-import { Phone, ChevronDown, Menu, X, Calendar, Activity, HeartHandshake, Shield } from 'lucide-react';
+import { Phone, ChevronDown, Menu, X, Calendar, Activity, HeartHandshake, Shield, ShieldCheck } from 'lucide-react';
 
 interface HeaderProps {
   onOpenAppointment: (treatmentId?: string) => void;
@@ -62,37 +62,39 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAppointment }) => {
   };
 
   return (
-    <header className={`sticky top-0 z-40 bg-white transition-all duration-200 ${isScrolled ? 'shadow-md border-b border-slate-200/80 py-2 sm:py-2.5' : 'border-b border-slate-100 py-2.5 sm:py-3.5'}`}>
+    <header className={`sticky top-0 z-40 bg-white transition-all duration-200 ${isScrolled ? 'shadow-sm border-b border-slate-200/90 py-2 sm:py-2.5' : 'border-b border-slate-100 py-2 sm:py-3'}`}>
       {/* Top emergency announcement ticker bar (desktop/tablet) */}
       <div className="bg-slate-900 text-white text-xs py-1.5 px-4 hidden lg:block">
         <div className="max-w-7xl mx-auto flex justify-between items-center font-medium">
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-1.5 text-cyan-300">
-              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+              <ShieldCheck className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
               24/7 Casualty & Surgical Emergency Unit
             </span>
-            <span className="text-slate-300">
+            <span className="text-slate-300 text-[11px]">
               {ATHREE_HOSPITAL_CONFIG.parentCompany}
             </span>
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-6 text-[11px] sm:text-xs">
             <a href={`tel:${ATHREE_HOSPITAL_CONFIG.phoneFormatted}`} className="hover:text-cyan-300 transition-colors flex items-center gap-1.5">
               <Phone className="w-3.5 h-3.5 text-cyan-400" />
               Emergency Line: <strong className="font-bold text-white">{ATHREE_HOSPITAL_CONFIG.phone}</strong>
             </a>
-            <span className="text-slate-400">|</span>
+            <span className="text-slate-500">|</span>
             <span className="text-slate-300">Poornaprajna Layout, Uttarahalli Hobli, Bengaluru</span>
           </div>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-2 sm:gap-4">
-          {/* Zone 1: Logo Wordmark */}
-          <AthreeLogo />
+        <div className="flex items-center justify-between gap-3 sm:gap-6">
+          {/* Zone 1: Logo Wordmark (Prominent & Balanced) */}
+          <div className="flex items-center shrink-0">
+            <AthreeLogo size="md" />
+          </div>
 
           {/* Zone 2: Navigation Links (Desktop) */}
-          <nav className="hidden md:flex items-center gap-1 lg:gap-2 text-xs lg:text-sm font-semibold text-slate-700">
+          <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2.5 text-xs xl:text-sm font-semibold text-slate-700">
             <Link
               to="/"
               className={`px-2.5 lg:px-3 py-2 rounded-lg transition-colors whitespace-nowrap shrink-0 ${location.pathname === '/' ? 'text-blue-900 bg-blue-50 font-bold' : 'hover:text-blue-900 hover:bg-slate-50'}`}
@@ -158,8 +160,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAppointment }) => {
             </Link>
           </nav>
 
-          {/* Zone 3: CTA Button (Desktop) */}
-          <div className="hidden md:flex items-center gap-2 lg:gap-3 shrink-0">
+          {/* Zone 3: CTA Button (Desktop >= 1024px) */}
+          <div className="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0">
             <a
               href={`tel:${ATHREE_HOSPITAL_CONFIG.phoneFormatted}`}
               className="hidden xl:inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 hover:text-blue-900 px-3 py-2 rounded-lg hover:bg-slate-100 transition-colors"
@@ -169,27 +171,36 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAppointment }) => {
             </a>
             <button
               onClick={() => onOpenAppointment()}
-              className="px-3.5 lg:px-4 py-2 lg:py-2.5 bg-blue-900 hover:bg-blue-800 text-white text-xs lg:text-sm font-semibold rounded-xl transition-all shadow-sm hover:shadow inline-flex items-center gap-1.5 lg:gap-2 whitespace-nowrap shrink-0"
+              className="px-4 py-2.5 bg-blue-900 hover:bg-blue-800 text-white text-xs lg:text-sm font-semibold rounded-xl transition-all shadow-sm hover:shadow inline-flex items-center gap-1.5 lg:gap-2 whitespace-nowrap shrink-0"
             >
-              <Calendar className="w-3.5 h-3.5 lg:w-4 lg:h-4" />
-              Book Appointment
+              <Calendar className="w-4 h-4" />
+              <span>Book Appointment</span>
             </button>
           </div>
 
-          {/* Mobile Right Controls (<768px) */}
-          <div className="flex md:hidden items-center gap-1.5 shrink-0">
+          {/* Mobile & Tablet Right Controls (< 1024px) */}
+          <div className="flex lg:hidden items-center gap-1.5 sm:gap-2 shrink-0">
+            <a
+              href={`tel:${ATHREE_HOSPITAL_CONFIG.phoneFormatted}`}
+              className="p-2 text-cyan-700 hover:bg-cyan-50 rounded-lg transition-colors flex items-center justify-center min-h-[40px] min-w-[40px]"
+              aria-label="Call Hospital"
+            >
+              <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-600" />
+            </a>
+
             <button
               onClick={() => onOpenAppointment()}
-              className="px-2.5 py-1.5 bg-blue-900 text-white text-xs font-bold rounded-lg shadow-sm flex items-center gap-1 shrink-0"
-              aria-label="Book Appointment"
+              className="px-3 py-2 bg-blue-900 text-white text-xs font-bold rounded-xl shadow-sm flex items-center gap-1.5 shrink-0 min-h-[40px]"
+              aria-label="Book Consultation"
             >
               <Calendar className="w-3.5 h-3.5" />
-              <span>Book</span>
+              <span className="hidden xs:inline">Book Visit</span>
+              <span className="xs:hidden">Book</span>
             </button>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-slate-800 hover:bg-slate-100 rounded-lg transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center shrink-0"
+              className="p-2 text-slate-800 hover:bg-slate-100 rounded-xl transition-colors min-h-[40px] min-w-[40px] flex items-center justify-center shrink-0"
               aria-label="Toggle Navigation Menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6 text-slate-900" /> : <Menu className="w-6 h-6 text-slate-900" />}
@@ -198,10 +209,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAppointment }) => {
         </div>
       </div>
 
-      {/* Mobile Menu Drawer Overlay */}
+      {/* Mobile & Tablet Menu Drawer Overlay (< 1024px) */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 top-[53px] z-50 bg-slate-900/50 backdrop-blur-xs md:hidden flex flex-col">
-          <div className="bg-white w-full max-h-[calc(100vh-53px)] overflow-y-auto px-4 pt-3 pb-24 shadow-2xl space-y-4">
+        <div className="fixed inset-0 top-[60px] sm:top-[72px] z-50 bg-slate-900/60 backdrop-blur-xs lg:hidden flex flex-col">
+          <div className="bg-white w-full max-h-[calc(100vh-72px)] overflow-y-auto px-4 pt-3 pb-24 shadow-2xl space-y-4">
             {/* Primary Nav Links */}
             <div className="space-y-1 border-b border-slate-100 pb-3">
               <Link

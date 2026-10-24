@@ -1,6 +1,6 @@
 import React from 'react';
 import { SeoHead } from '../components/SeoHead';
-import { ATHREE_HOSPITAL_CONFIG, DOCTORS, HOSPITAL_FACILITIES } from '../data/hospitalData';
+import { ATHREE_HOSPITAL_CONFIG, HOSPITAL_FACILITIES } from '../data/hospitalData';
 import { ShieldCheck, Award, HeartHandshake, CheckCircle2, Building, Calendar } from 'lucide-react';
 
 interface AboutPageProps {
@@ -73,18 +73,50 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenAppointment }) => {
           </div>
         </div>
 
-        {/* Doctors Overview */}
-        <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
-          <h2 className="text-2xl font-bold text-slate-900">Clinical Leadership</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {DOCTORS.map((doc) => (
-              <div key={doc.id} className="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-2">
-                <h3 className="font-bold text-slate-900 text-base">{doc.name}</h3>
-                <div className="text-xs font-semibold text-blue-900">{doc.specialty}</div>
-                <div className="text-xs text-slate-500">{doc.qualifications}</div>
-                <p className="text-xs text-slate-600 leading-relaxed pt-2 border-t border-slate-200/80">
-                  {doc.bio}
-                </p>
+        {/* Hospital Facilities & Clinical Infrastructure */}
+        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
+          <div className="space-y-1">
+            <div className="flex items-center gap-2 text-xs font-bold text-blue-900 uppercase tracking-wider">
+              <span>Modern Infrastructure</span>
+              <span className="text-slate-400">·</span>
+              <span>Advanced Surgical Suites</span>
+            </div>
+            <h2 className="text-2xl font-bold text-slate-900">Hospital Facilities & Technology</h2>
+            <p className="text-xs sm:text-sm text-slate-600 max-w-2xl">
+              Equipped with German laser technology, 3D HD keyhole endoscopy towers, digital radiology, and 24/7 casualty care.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {HOSPITAL_FACILITIES.map((fac) => (
+              <div key={fac.id} className="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 flex flex-col group hover:shadow-md transition-shadow">
+                {fac.imageUrl && (
+                  <div className="aspect-[16/10] w-full overflow-hidden relative bg-slate-200">
+                    <img
+                      src={fac.imageUrl}
+                      alt={fac.imageAlt || fac.title}
+                      loading="lazy"
+                      decoding="async"
+                      width="600"
+                      height="360"
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent pointer-events-none" />
+                    <span className="absolute top-2.5 left-2.5 px-2 py-0.5 bg-blue-900/90 text-cyan-300 text-[10px] font-bold rounded backdrop-blur-xs">
+                      {fac.badge}
+                    </span>
+                  </div>
+                )}
+                <div className="p-4 space-y-1.5 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="font-bold text-slate-900 text-sm group-hover:text-blue-900 transition-colors">
+                      {fac.title}
+                    </h3>
+                    <p className="text-xs text-slate-600 leading-relaxed mt-1">
+                      {fac.description}
+                    </p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

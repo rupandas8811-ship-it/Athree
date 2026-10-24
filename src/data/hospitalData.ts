@@ -34,6 +34,8 @@ export const TREATMENT_CATEGORIES: TreatmentCategory[] = [
     name: 'General Surgery',
     description: 'Minimally invasive keyhole and laser procedures designed for minimal discomfort, smaller incisions, and faster return to daily activities.',
     iconName: 'Activity',
+    imageUrl: 'https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Modern sterile 3D keyhole laparoscopic surgical theatre at Athree Hospital',
     treatments: [
       { id: 'hernia-repair', slug: 'hernia-repair', title: 'Hernia Repair', shortDesc: 'Tension-free keyhole repair to fix weak muscle walls in the abdomen or groin.' },
       { id: 'gallstones', slug: 'gallstones', title: 'Gallstones Treatment', shortDesc: 'Gentle keyhole gallbladder removal to permanently stop severe upper stomach pain.' },
@@ -47,6 +49,8 @@ export const TREATMENT_CATEGORIES: TreatmentCategory[] = [
     name: "Women's Health",
     description: 'Empathetic, specialized care for women, including uterus-preserving procedures, fibroid care, and advanced keyhole surgeries.',
     iconName: 'HeartHandshake',
+    imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Compassionate physician providing women\'s health consultation at Athree Hospital',
     treatments: [
       { id: 'uterine-fibroids', slug: 'uterine-fibroids', title: 'Uterine Fibroids Treatment', shortDesc: 'Uterus-preserving keyhole removal of benign uterine lumps to stop heavy bleeding.' },
       { id: 'ovarian-cysts', slug: 'ovarian-cysts', title: 'Ovarian Cysts Treatment', shortDesc: 'Precision removal of ovarian fluid sacs while protecting healthy egg reserve.' },
@@ -59,6 +63,8 @@ export const TREATMENT_CATEGORIES: TreatmentCategory[] = [
     name: 'Spine Care',
     description: 'Non-surgical physical rehabilitation, targeted pain injections, and keyhole procedures for slipped discs and back fractures.',
     iconName: 'Shield',
+    imageUrl: 'https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Spine specialist reviewing vertebrae diagnostic scans and disc alignment',
     treatments: [
       { id: 'lumbar-disc-prolapse', slug: 'lumbar-disc-prolapse', title: 'Lumbar Disc Prolapse Treatment', shortDesc: 'Targeted nerve care and keyhole discectomy to stop shooting sciatica leg pain.' },
       { id: 'cervical-disc-disease', slug: 'cervical-disc-disease', title: 'Cervical Disc Disease Treatment', shortDesc: 'Comprehensive care to relieve neck stiffness, shoulder ache, and arm numbness.' },
@@ -1020,25 +1026,33 @@ export const HOSPITAL_FACILITIES = [
     id: 'fac-1',
     title: 'Advanced 3D HD Keyhole Surgery Theatres',
     description: 'Ultra-modern sterile modular operating rooms equipped with 4K 3D keyhole cameras, Harmonic energy tools, and surgical air filtration.',
-    badge: '3D Surgical Suite'
+    badge: '3D Surgical Suite',
+    imageUrl: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=600&q=80',
+    imageAlt: 'Modern sterile modular operating room for 3D keyhole surgery'
   },
   {
     id: 'fac-2',
     title: 'German Laser Proctology Suite',
     description: 'Dedicated state-of-the-art German laser therapy units for painless day-care hemorrhoid, fistula, and fissure procedures.',
-    badge: 'Day-Care Unit'
+    badge: 'Day-Care Unit',
+    imageUrl: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=600&q=80',
+    imageAlt: 'Laser surgical facility and patient treatment equipment'
   },
   {
     id: 'fac-3',
     title: 'High-Precision Diagnostic & Radiology Center',
     description: 'In-house high-resolution Ultrasound (USG) with Doppler, C-arm fluoroscopy, digital X-rays, and automated pathology laboratory.',
-    badge: '24/7 Diagnostics'
+    badge: '24/7 Diagnostics',
+    imageUrl: 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=600&q=80',
+    imageAlt: 'Ultrasound and diagnostic medical imaging center at Athree Hospital'
   },
   {
     id: 'fac-4',
     title: 'Deluxe Patient Rooms & Intensive Care',
     description: 'Spacious private rooms, deluxe suites, and a fully monitored High Dependency Unit (HDU/ICU) with round-the-clock nursing staff.',
-    badge: 'Premium Comfort'
+    badge: 'Premium Comfort',
+    imageUrl: 'https://images.unsplash.com/photo-1512678080530-7760d81faba6?auto=format&fit=crop&w=600&q=80',
+    imageAlt: 'Clean, comfortable patient recovery suite with 24/7 nursing monitor'
   }
 ];
 
