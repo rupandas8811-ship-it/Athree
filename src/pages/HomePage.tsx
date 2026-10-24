@@ -5,8 +5,7 @@ import { SeoHead } from '../components/SeoHead';
 import { FaqAccordion } from '../components/FaqAccordion';
 import { AppointmentForm } from '../components/AppointmentForm';
 import { LiquidMorphHeroBlobs } from '../components/LiquidMorphHeroBlobs';
-import { Medical3DViewer } from '../components/Medical3DViewer';
-import { Phone, Calendar, MessageSquare, ShieldCheck, ArrowRight, Activity, HeartHandshake, Shield, UserCheck, Sparkles, Clock, Award, Users, FileText, Heart, CheckCircle2, Eye, Box } from 'lucide-react';
+import { Phone, Calendar, MessageSquare, ShieldCheck, ArrowRight, Activity, HeartHandshake, Shield, UserCheck, Sparkles, Clock, Award, Users, FileText, Heart, CheckCircle2 } from 'lucide-react';
 
 interface HomePageProps {
   onOpenAppointment: (treatmentId?: string) => void;
@@ -199,56 +198,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAppointment }) => {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 3.5: INTERACTIVE 3D ANATOMY & SURGICAL EXPLORER */}
-      <section id="3d-explorer" className="py-12 sm:py-16 bg-slate-900 text-white relative overflow-hidden">
-        {/* Subtle radial ambient background glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-8">
-          <div className="text-center max-w-3xl mx-auto space-y-3">
-            <span className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-cyan-300 bg-cyan-950/80 px-3.5 py-1.5 rounded-full border border-cyan-800/80">
-              <Box className="w-3.5 h-3.5 text-cyan-400" />
-              Patient Education Technology
-            </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-              Interactive 3D Anatomy & Surgical Explorer
-            </h2>
-            <p className="text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed">
-              Explore Athree Hospital’s 3D medical models. Rotate, zoom, and explode internal anatomical structures to understand how spinal disc prolapses, laparoscopic keyhole surgeries, and joint treatments work.
-            </p>
-          </div>
-
-          {/* Embedded Interactive 3D Three.js Medical Viewer */}
-          <Medical3DViewer
-            initialModel="spine-disc"
-            height="h-[520px] sm:h-[620px]"
-            onOpenAppointment={onOpenAppointment}
-          />
-
-          {/* Quick Feature Highlights beneath 3D Viewer */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
-            <div className="bg-slate-800/80 border border-slate-700/80 rounded-xl p-4 space-y-1">
-              <span className="font-bold text-cyan-300 block text-sm">Exploded Layer Inspector</span>
-              <p className="text-slate-300 text-[11px] leading-relaxed">
-                Use the bottom slider to separate vertebrae, intervertebral discs, nerve roots, or surgical instruments layer by layer.
-              </p>
-            </div>
-            <div className="bg-slate-800/80 border border-slate-700/80 rounded-xl p-4 space-y-1">
-              <span className="font-bold text-cyan-300 block text-sm">Diagnostic Heatmap & X-Ray</span>
-              <p className="text-slate-300 text-[11px] leading-relaxed">
-                Switch rendering modes to visualize nerve compression hotspots, tissue tension, or translucent keyhole instrument paths.
-              </p>
-            </div>
-            <div className="bg-slate-800/80 border border-slate-700/80 rounded-xl p-4 space-y-1">
-              <span className="font-bold text-cyan-300 block text-sm">Anatomical Part Tooltips</span>
-              <p className="text-slate-300 text-[11px] leading-relaxed">
-                Hover or tap any 3D structure to reveal plain-English medical explanations and surgical treatment insights.
-              </p>
-            </div>
           </div>
         </div>
       </section>

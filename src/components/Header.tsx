@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { AthreeLogo } from './AthreeLogo';
 import { TREATMENT_CATEGORIES, ATHREE_HOSPITAL_CONFIG } from '../data/hospitalData';
-import { Phone, ChevronDown, Menu, X, Calendar, Activity, HeartHandshake, Shield, Box } from 'lucide-react';
+import { Phone, ChevronDown, Menu, X, Calendar, Activity, HeartHandshake, Shield } from 'lucide-react';
 
 interface HeaderProps {
   onOpenAppointment: (treatmentId?: string) => void;
@@ -105,14 +105,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAppointment }) => {
               className={`px-2.5 lg:px-3 py-2 rounded-lg transition-colors whitespace-nowrap shrink-0 ${location.pathname === '/about' ? 'text-blue-900 bg-blue-50 font-bold' : 'hover:text-blue-900 hover:bg-slate-50'}`}
             >
               About Us
-            </Link>
-
-            <Link
-              to="/3d-explorer"
-              className={`px-2.5 lg:px-3 py-2 rounded-lg transition-colors whitespace-nowrap shrink-0 flex items-center gap-1 ${location.pathname === '/3d-explorer' ? 'text-cyan-600 bg-cyan-50 font-bold' : 'text-slate-700 hover:text-cyan-700 hover:bg-cyan-50/60'}`}
-            >
-              <Box className="w-3.5 h-3.5 text-cyan-600" />
-              <span>3D Anatomy Explorer</span>
             </Link>
 
             {/* Categorized Treatments Dropdown */}
@@ -223,13 +215,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAppointment }) => {
                 className="flex items-center min-h-[44px] px-3 rounded-xl text-sm font-semibold text-slate-900 hover:bg-slate-50"
               >
                 About Us
-              </Link>
-              <Link
-                to="/3d-explorer"
-                className="flex items-center gap-2 min-h-[44px] px-3 rounded-xl text-sm font-bold text-cyan-600 bg-cyan-50/80 border border-cyan-100"
-              >
-                <Box className="w-4 h-4 text-cyan-600" />
-                <span>3D Anatomy Explorer</span>
               </Link>
               <Link
                 to="/contact"

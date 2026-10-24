@@ -10,7 +10,6 @@ import { TreatmentDetailPage } from './pages/TreatmentDetailPage';
 import { ContactPage } from './pages/ContactPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { AboutPage } from './pages/AboutPage';
-import { Explorer3DPage } from './pages/Explorer3DPage';
 
 // Helper component to scroll window to top on route change
 function ScrollToTop() {
@@ -54,7 +53,6 @@ export default function App() {
               path="/treatments/:treatmentSlug"
               element={<TreatmentDetailPage onOpenAppointment={handleOpenAppointment} />}
             />
-            <Route path="/3d-explorer" element={<Explorer3DPage onOpenAppointment={handleOpenAppointment} />} />
             <Route path="/contact" element={<ContactPage onOpenAppointment={handleOpenAppointment} />} />
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/about" element={<AboutPage onOpenAppointment={handleOpenAppointment} />} />
