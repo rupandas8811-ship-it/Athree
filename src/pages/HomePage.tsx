@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { TREATMENT_CATEGORIES, DOCTORS, HOSPITAL_FACILITIES, GENERAL_FAQS, WHY_CHOOSE_US_REASONS, ATHREE_HOSPITAL_CONFIG } from '../data/hospitalData';
+import { TREATMENT_CATEGORIES, HOSPITAL_FACILITIES, GENERAL_FAQS, WHY_CHOOSE_US_REASONS, ATHREE_HOSPITAL_CONFIG } from '../data/hospitalData';
 import { SeoHead } from '../components/SeoHead';
 import { FaqAccordion } from '../components/FaqAccordion';
 import { AppointmentForm } from '../components/AppointmentForm';
@@ -280,60 +280,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAppointment }) => {
         </div>
       </section>
 
-      {/* SECTION 6: DOCTOR PROFILES */}
-      <section className="py-12 sm:py-16 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
-            <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-blue-900 bg-blue-50 px-3 py-1 rounded-full">
-              Medical Team
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">Meet Our Doctors</h2>
-            <p className="text-slate-600 text-xs sm:text-sm">
-              Consult with verified, highly experienced surgical and clinical consultants.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {DOCTORS.map((doc) => (
-              <div
-                key={doc.id}
-                className="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
-              >
-                <div>
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-blue-900 text-white font-extrabold text-lg sm:text-xl flex items-center justify-center mb-3 shadow-sm">
-                    {doc.name.split(' ').map(n => n[0]).join('')}
-                  </div>
-                  <h3 className="text-base sm:text-lg font-bold text-slate-900">{doc.name}</h3>
-                  <div className="text-xs font-semibold text-blue-900 mt-0.5">{doc.specialty}</div>
-                  <div className="text-xs text-slate-500 font-medium mt-1">{doc.qualifications}</div>
-                  <div className="text-xs text-slate-600 mt-2 line-clamp-3 leading-relaxed">
-                    {doc.bio}
-                  </div>
-                </div>
-
-                <div className="pt-3.5 mt-3.5 border-t border-slate-200/80 space-y-2.5 text-xs">
-                  <div className="flex justify-between text-slate-600">
-                    <span>Verified Experience:</span>
-                    <span className="font-semibold text-slate-900">{doc.experienceYears}+ Years</span>
-                  </div>
-                  <div className="flex justify-between text-slate-600">
-                    <span>OPD Hours:</span>
-                    <span className="font-medium text-slate-800 text-right">{doc.timings}</span>
-                  </div>
-                  <button
-                    onClick={() => onOpenAppointment()}
-                    className="w-full min-h-[44px] py-2.5 px-4 bg-blue-900 hover:bg-blue-800 text-white font-semibold text-xs rounded-xl transition-colors shadow-xs"
-                  >
-                    Book Appointment
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 7: HOSPITAL FACILITIES */}
+      {/* SECTION 6: HOSPITAL FACILITIES */}
       <section className="py-12 sm:py-16 bg-white border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
