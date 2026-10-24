@@ -1,0 +1,6 @@
+{
+  "name": "Athree Hospital – Advanced Multi-Specialty & Surgical Care",
+  "description": "Athree Hospital provides expert, patient-focused care in Laparoscopic Surgery, Women's Health, Spine & Orthopedics. Book consultations online or via WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
