@@ -39,6 +39,7 @@ export const TREATMENT_CATEGORIES: TreatmentCategory[] = [
     treatments: [
       { id: 'hernia-repair', slug: 'hernia-repair', title: 'Hernia Repair', shortDesc: 'Tension-free keyhole repair to fix weak muscle walls in the abdomen or groin.' },
       { id: 'gallstones', slug: 'gallstones', title: 'Gallstones Treatment', shortDesc: 'Gentle keyhole gallbladder removal to permanently stop severe upper stomach pain.' },
+      { id: 'appendicitis', slug: 'appendicitis', title: 'Appendix Treatment', shortDesc: 'Emergency keyhole appendectomy to safely remove inflamed appendix.' },
       { id: 'piles', slug: 'piles', title: 'Piles Treatment', shortDesc: 'Painless laser therapy (LHP) to shrink swollen rectal veins without open cuts.' },
       { id: 'anal-fissure', slug: 'anal-fissure', title: 'Anal Fissure Treatment', shortDesc: 'Medical healing ointments and laser treatment to relieve sharp toilet pain.' },
       { id: 'anal-fistula', slug: 'anal-fistula', title: 'Anal Fistula Treatment', shortDesc: 'Sphincter-preserving laser closure (FiLaC) to seal infected perianal tunnels.' }
@@ -81,6 +82,9 @@ export const TREATMENTS: Record<string, EnhancedTreatment> = {
     heroHeadline: 'Hernia Treatment & Surgical Consultation',
     categoryId: 'general-surgery',
     categoryTitle: 'General Surgery',
+    imageUrl: '/assets/treatments/hernia-repair.jpg',
+    imageAlt: '3D Laparoscopic keyhole hernia repair and tension-free mesh placement at Athree Hospital Bengaluru',
+    imageCaption: '3D Laparoscopic Keyhole Mesh Repair',
     shortDesc: 'A hernia occurs when tissue pushes through a gap in weak abdominal muscle. Keyhole mesh repair fixes the gap safely.',
     plainEnglishIntro: 'A hernia is a bulge or lump that forms when internal tissue pushes through a weak spot in your belly or groin muscles. It does not go away on its own, but can be safely repaired with a simple keyhole procedure.',
     overview: 'Hernias usually happen in the groin (inguinal hernia), belly button (umbilical hernia), or along a previous surgical scar (incisional hernia). When you strain, lift objects, or stand for long periods, internal pressure pushes tissue out through the muscle weakness, causing a soft bulge and aching discomfort. At Athree Hospital, our surgeons use 3D keyhole (laparoscopic) surgery to place a supportive mesh behind the weak wall, letting you heal quickly with minimal pain.',
@@ -156,6 +160,9 @@ export const TREATMENTS: Record<string, EnhancedTreatment> = {
     heroHeadline: 'Gallstone Evaluation & Treatment',
     categoryId: 'general-surgery',
     categoryTitle: 'General Surgery',
+    imageUrl: '/assets/treatments/gallstones.jpg',
+    imageAlt: 'Laparoscopic cholecystectomy keyhole gallbladder removal surgery at Athree Hospital Bengaluru',
+    imageCaption: 'Laparoscopic Cholecystectomy Suite',
     shortDesc: 'Gallstones are hard deposits that form in the gallbladder. Keyhole removal stops upper stomach pain permanently.',
     plainEnglishIntro: 'Gallstones are pebble-like hard deposits formed inside the gallbladder. They can block digestive bile flow and trigger sharp pain in the upper stomach, especially after eating fatty meals.',
     overview: 'The gallbladder holds bile that breaks down fats. When cholesterol hardens into stones, they block the bile duct causing intense stomach pain. At Athree Hospital, our specialists perform gentle keyhole surgery (laparoscopic cholecystectomy) to safely remove the stone-filled gallbladder.',
@@ -225,6 +232,86 @@ export const TREATMENTS: Record<string, EnhancedTreatment> = {
     relatedSlugs: ['hernia-repair', 'piles', 'anal-fissure']
   },
 
+  'appendicitis': {
+    id: 'appendicitis',
+    slug: 'appendicitis',
+    title: 'Appendix Treatment',
+    heroHeadline: 'Emergency & Keyhole Appendix Treatment',
+    categoryId: 'general-surgery',
+    categoryTitle: 'General Surgery',
+    imageUrl: '/assets/treatments/appendicitis.jpg',
+    imageAlt: 'Emergency sterile laparoscopic appendectomy keyhole surgical suite with digital endoscopy monitors at Athree Hospital Bengaluru',
+    imageCaption: 'Emergency 3D Laparoscopic Appendectomy',
+    shortDesc: 'Appendicitis is a sudden swelling of the appendix. Safe 3D keyhole surgery removes the inflamed organ before it bursts.',
+    plainEnglishIntro: 'Appendicitis is an acute inflammation of the appendix, a small finger-shaped pouch connected to the large intestine. It causes sharp, worsening pain in the lower right side of the belly and requires prompt medical attention.',
+    overview: 'An inflamed appendix can rapidly worsen and risk rupture or internal infection. At Athree Hospital, our 24/7 surgical team provides immediate diagnosis via high-resolution ultrasound and emergency 3D keyhole (laparoscopic) appendectomy. This gentle procedure removes the appendix through tiny keyhole punctures, allowing rapid relief and safe recovery.',
+    symptoms: [
+      'Sudden dull pain beginning near the navel and shifting sharp to the lower right abdomen',
+      'Pain that intensifies quickly with coughing, walking, or sudden body movements',
+      'Nausea, vomiting, and complete loss of appetite',
+      'Low-grade fever that can rise as infection develops',
+      'Abdominal swelling, tenderness, or muscle guarding on the right side'
+    ],
+    whenToConsult: [
+      'EMERGENCY WARNING: Sudden severe pain in the lower right abdomen (Call our 24/7 emergency helpline immediately at +91 74835 20200)',
+      'Abdominal pain accompanied by vomiting, high fever, or inability to stand upright',
+      'Tenderness that worsens when pressure on the lower right belly is released',
+      'Never take strong laxatives or pain relievers before a doctor checks your belly, as this can mask critical signs'
+    ],
+    diagnosisMethods: [
+      'Emergency Clinical Evaluation: Gentle physical abdominal palpation and rebound tenderness assessment by our senior surgeon.',
+      'Emergency Ultrasound Scan (USG): High-resolution sonography to directly visualize appendix swelling and surrounding fluid.',
+      'Rapid Blood Tests (CBC & CRP): Evaluating infection counts and white blood cell levels.',
+      'Abdominal CT Scan: Performed when ultrasound imaging requires additional anatomical detail.'
+    ],
+    treatmentOptions: [
+      {
+        type: 'Gold Standard',
+        title: 'Laparoscopic Appendectomy (Keyhole Surgery)',
+        description: 'Removal of the inflamed appendix through 3 tiny 5mm punctures using high-definition cameras, leaving minimal scars and ensuring rapid discharge.'
+      },
+      {
+        type: 'Intensive Medical Care',
+        title: 'Intravenous Antibiotic Therapy',
+        description: 'Administered immediately upon hospital admission to control infection and safeguard patient stability prior to surgery.'
+      },
+      {
+        type: 'Conventional Surgery',
+        title: 'Open Appendectomy',
+        description: 'Reserved for complicated cases with ruptured appendix or extensive peritonitis requiring full abdominal wash.'
+      }
+    ],
+    whyChooseAthree: [
+      '24/7 Emergency Surgical Ready Team & dedicated acute care',
+      'Advanced 3D keyhole laparoscopic surgery with minimal pain and scars',
+      'In-house high-resolution ultrasound and emergency pathology laboratory',
+      'Rapid patient recovery with discharge typically within 24 to 36 hours',
+      'Transparent treatment guidance and cashless insurance assistance'
+    ],
+    faqs: [
+      {
+        question: 'How quickly does laparoscopic appendectomy need to be done?',
+        answer: 'Once acute appendicitis is diagnosed, surgery is ideally performed promptly within hours to prevent the appendix from bursting.'
+      },
+      {
+        question: 'How long will I need to stay in the hospital?',
+        answer: 'With keyhole laparoscopic surgery, most patients are discharged comfortably within 24 to 36 hours.'
+      },
+      {
+        question: 'Can appendicitis be cured with antibiotics alone without surgery?',
+        answer: 'While mild cases may temporarily settle with IV antibiotics, the recurrence risk is very high. Surgical removal remains the only definitive and safe cure.'
+      },
+      {
+        question: 'How soon can I return to normal work after keyhole appendix surgery?',
+        answer: 'Most patients walk comfortably the same evening and resume light office work within 5 to 7 days.'
+      }
+    ],
+    seoTitle: 'Appendix Treatment & Laparoscopic Appendectomy | Athree Hospital Bengaluru',
+    seoDescription: 'Emergency appendix treatment & keyhole laparoscopic appendectomy at Athree Hospital Bengaluru. 24/7 surgical care, minimal pain & rapid discharge. Call now.',
+    keywords: ['Appendix treatment', 'Appendicitis surgery', 'Laparoscopic appendectomy', 'Appendix pain', 'Athree Hospital appendix Bengaluru'],
+    relatedSlugs: ['gallstones', 'hernia-repair', 'piles']
+  },
+
   'piles': {
     id: 'piles',
     slug: 'piles',
@@ -232,6 +319,9 @@ export const TREATMENTS: Record<string, EnhancedTreatment> = {
     heroHeadline: 'Piles Treatment & Specialist Consultation',
     categoryId: 'general-surgery',
     categoryTitle: 'General Surgery',
+    imageUrl: '/assets/treatments/piles.jpg',
+    imageAlt: 'Advanced German laser therapy system for painless laser hemorrhoidoplasty (LHP) at Athree Hospital Bengaluru',
+    imageCaption: 'Painless Laser Hemorrhoidoplasty (LHP)',
     shortDesc: 'Piles (hemorrhoids) are swollen blood vessels near the anus. Painless laser treatment shrinks swollen veins without open cuts.',
     plainEnglishIntro: 'Piles are swollen, inflamed blood vessels in the lower rectum or anal area. They can cause bleeding during bowel movements, itching, or painful lumps.',
     overview: 'Straining during toilet visits causes rectal veins to swell and bleed. At Athree Hospital, our proctology specialists offer advanced German Laser Hemorrhoidoplasty (LHP) and stapler procedures that shrink swollen tissue without scalpels, cuts, or open wounds.',
@@ -307,6 +397,9 @@ export const TREATMENTS: Record<string, EnhancedTreatment> = {
     heroHeadline: 'Anal Fissure Evaluation & Treatment',
     categoryId: 'general-surgery',
     categoryTitle: 'General Surgery',
+    imageUrl: '/assets/treatments/anal-fissure.jpg',
+    imageAlt: 'Specialized proctology consultation and gentle non-surgical anal fissure evaluation at Athree Hospital',
+    imageCaption: 'Proctology Clinic & Laser Care',
     shortDesc: 'An anal fissure is a small crack in the anal lining causing sharp pain during toilet visits. Medical ointments & laser cure it quickly.',
     plainEnglishIntro: 'An anal fissure is a small tear in the lining of the anus, usually triggered by passing hard stool. It causes sharp, cutting pain and burning during and after bowel movements.',
     overview: 'Because sphincter muscles go into spasm when a fissure occurs, blood flow drops, slowing healing. At Athree Hospital, we prioritize non-surgical healing ointments and laser treatments to release muscle spasm and promote rapid healing.',
@@ -382,6 +475,9 @@ export const TREATMENTS: Record<string, EnhancedTreatment> = {
     heroHeadline: 'Anal Fistula Treatment & Surgical Care',
     categoryId: 'general-surgery',
     categoryTitle: 'General Surgery',
+    imageUrl: '/assets/treatments/anal-fistula.jpg',
+    imageAlt: 'Video-assisted endoscopy and FiLaC laser procedure suite for anal fistula closure at Athree Hospital',
+    imageCaption: 'Sphincter-Sparing FiLaC Laser Suite',
     shortDesc: 'An anal fistula is an infected tunnel under the skin near the anus. Sphincter-sparing laser (FiLaC) seals the tunnel safely.',
     plainEnglishIntro: 'An anal fistula is a small infected tunnel that connects an infected gland inside the anal canal to an opening on the skin near the anus.',
     overview: 'Anal fistulas cause recurring pus, fluid discharge, and throbbing pain. They do not heal with medicines alone. At Athree Hospital, we specialize in sphincter-sparing FiLaC (Fistula Laser Closure) and VAAFT procedures that seal the tunnel without cutting anal muscles.',
@@ -457,6 +553,9 @@ export const TREATMENTS: Record<string, EnhancedTreatment> = {
     heroHeadline: 'Uterine Fibroid Evaluation & Treatment',
     categoryId: 'womens-health',
     categoryTitle: "Women's Health",
+    imageUrl: '/assets/treatments/uterine-fibroids.jpg',
+    imageAlt: 'High-resolution pelvic ultrasound and uterus-preserving laparoscopic myomectomy evaluation at Athree Hospital',
+    imageCaption: 'Pelvic Sonography & Myomectomy Care',
     shortDesc: 'Uterine fibroids are non-cancerous muscular lumps in the uterus. Uterus-preserving keyhole surgery removes fibroids while stopping heavy bleeding.',
     plainEnglishIntro: 'Uterine fibroids are non-cancerous (benign) muscle growths in the wall of the uterus. They can cause heavy period bleeding, severe cramps, and lower belly pressure.',
     overview: 'Fibroids vary from small nodules to large lumps. At Athree Hospital, our female gynecological specialists focus on uterus-sparing keyhole myomectomy. We remove only the fibroids, keeping your uterus intact for future health and pregnancy.',
@@ -533,6 +632,9 @@ export const TREATMENTS: Record<string, EnhancedTreatment> = {
     heroHeadline: 'Ovarian Cyst Assessment & Treatment',
     categoryId: 'womens-health',
     categoryTitle: "Women's Health",
+    imageUrl: '/assets/treatments/ovarian-cysts.jpg',
+    imageAlt: 'Pelvic ultrasound diagnostic workstation for egg-preserving ovarian cyst evaluation at Athree Hospital',
+    imageCaption: 'Egg-Preserving Diagnostic Suite',
     shortDesc: 'Ovarian cysts are fluid sacs on the ovary. Keyhole cystectomy removes the cyst cleanly while preserving healthy egg reserve.',
     plainEnglishIntro: 'An ovarian cyst is a fluid-filled sac on or inside an ovary. While many functional cysts resolve naturally, complex or painful cysts require evaluation to protect ovarian health.',
     overview: 'At Athree Hospital, our gynecologists use precise ultrasound tracking and microsurgical keyhole removal (cystectomy) to shell out the cyst capsule while keeping healthy egg tissue intact.',
@@ -609,6 +711,9 @@ export const TREATMENTS: Record<string, EnhancedTreatment> = {
     heroHeadline: 'Endometriosis Care & Treatment Options',
     categoryId: 'womens-health',
     categoryTitle: "Women's Health",
+    imageUrl: '/assets/treatments/endometriosis.jpg',
+    imageAlt: 'Advanced laparoscopic keyhole excision theater for endometriosis care at Athree Hospital Bengaluru',
+    imageCaption: '4K Laparoscopic Excision Theater',
     shortDesc: 'Endometriosis occurs when womb lining tissue grows outside the uterus, causing severe period pain. Keyhole excision gives lasting relief.',
     plainEnglishIntro: 'Endometriosis is a painful condition where tissue similar to womb lining grows outside the uterus (on ovaries, fallopian tubes, or pelvic lining), triggering severe monthly pain.',
     overview: 'At Athree Hospital, we offer complete hormonal therapies and gold-standard laparoscopic excision surgery. We cut out active endometriosis implants, freeing organs and restoring quality of life.',
@@ -685,6 +790,9 @@ export const TREATMENTS: Record<string, EnhancedTreatment> = {
     heroHeadline: 'Hysterectomy Consultation & Surgical Care',
     categoryId: 'womens-health',
     categoryTitle: "Women's Health",
+    imageUrl: '/assets/treatments/hysterectomy.jpg',
+    imageAlt: 'Total Laparoscopic Hysterectomy (TLH) minimally invasive surgical suite at Athree Hospital Bengaluru',
+    imageCaption: '3D HD Laparoscopic Hysterectomy Suite',
     shortDesc: 'A hysterectomy is the surgical removal of the uterus. Keyhole Total Laparoscopic Hysterectomy (TLH) offers minimal pain and 24-48 hr recovery.',
     plainEnglishIntro: 'A hysterectomy is a procedure to remove the womb (uterus), considered when other treatments fail to control heavy bleeding, extensive fibroids, or prolapse.',
     overview: 'At Athree Hospital, Total Laparoscopic Hysterectomy (TLH) is performed keyhole through tiny 5mm punctures. Healthy ovaries are preserved whenever possible so your body keeps producing natural female hormones.',
@@ -760,6 +868,9 @@ export const TREATMENTS: Record<string, EnhancedTreatment> = {
     heroHeadline: 'Lumbar Disc Prolapse & Sciatica Treatment',
     categoryId: 'spine-orthopedics',
     categoryTitle: 'Spine Care',
+    imageUrl: '/assets/treatments/lumbar-disc-prolapse.jpg',
+    imageAlt: 'High-definition lumbar spine MRI scan showing disc prolapse and nerve compression evaluation at Athree Hospital',
+    imageCaption: 'High-Resolution Lumbar MRI Scan',
     shortDesc: 'A prolapsed disc (slipped disc) presses on spinal nerves causing leg pain (sciatica). Non-surgical physical care & keyhole discectomy provide relief.',
     plainEnglishIntro: 'A lumbar disc prolapse (slipped disc) happens when the cushion between lower back bones bulges or tears, pinching nerves and triggering severe back pain and shooting leg pain (sciatica).',
     overview: 'Over 85% of slipped disc cases recover with physical therapy and pain blocks. For persistent compressed nerves, our spine team performs keyhole endoscopic microdiscectomy through an 8mm puncture, removing only the loose piece pressing on the nerve.',
@@ -836,6 +947,9 @@ export const TREATMENTS: Record<string, EnhancedTreatment> = {
     heroHeadline: 'Cervical Disc Disease Evaluation & Care',
     categoryId: 'spine-orthopedics',
     categoryTitle: 'Spine Care',
+    imageUrl: '/assets/treatments/cervical-disc-disease.jpg',
+    imageAlt: 'Cervical spine digital radiography displaying cervical vertebrae and disc space for neck pain care at Athree Hospital',
+    imageCaption: 'Digital Cervical Spine Radiography',
     shortDesc: 'Cervical disc disease involves bulging neck cushions pressing on nerves. Non-surgical neck physical care & nerve blocks relieve stiffness and arm numbness.',
     plainEnglishIntro: 'Cervical disc disease occurs when spinal cushions in your neck wear down or slip, pressing on nearby nerves and causing neck stiffness, shoulder ache, shooting arm pain, and hand numbness.',
     overview: 'At Athree Hospital, our spine team provides non-surgical posture correction, gentle neck traction, image-guided nerve blocks, and specialized physical rehabilitation to restore neck movement and eliminate arm numbness.',
@@ -912,6 +1026,9 @@ export const TREATMENTS: Record<string, EnhancedTreatment> = {
     heroHeadline: 'Vertebral Compression Fracture Treatment',
     categoryId: 'spine-orthopedics',
     categoryTitle: 'Spine Care',
+    imageUrl: '/assets/treatments/vertebral-compression-fractures.jpg',
+    imageAlt: 'C-arm fluoroscopy image-guided balloon kyphoplasty and vertebroplasty suite for vertebral fractures at Athree Hospital',
+    imageCaption: 'C-Arm Image-Guided Kyphoplasty Suite',
     shortDesc: 'A compression fracture occurs when weak spinal bone collapses. 20-minute needle-hole balloon kyphoplasty restores bone height and stops pain immediately.',
     plainEnglishIntro: 'A vertebral compression fracture happens when a spinal bone collapses or cracks, often due to osteoporosis (thin weak bones) or a minor slip. It causes sudden severe back pain and height loss.',
     overview: 'At Athree Hospital, we specialize in image-guided Balloon Kyphoplasty and Vertebroplasty. Through a tiny needle puncture, a small balloon restores bone height before medical bone cement stabilizes the bone, giving dramatic pain relief within hours.',
@@ -981,6 +1098,9 @@ export const TREATMENTS: Record<string, EnhancedTreatment> = {
     relatedSlugs: ['lumbar-disc-prolapse', 'cervical-disc-disease', 'hernia-repair']
   }
 };
+
+// Convenient alias for URL routing and backwards compatibility
+TREATMENTS['appendix'] = TREATMENTS['appendicitis'];
 
 export const DOCTORS: Doctor[] = [
   {

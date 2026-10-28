@@ -30,6 +30,9 @@ export interface Treatment {
   seoDescription: string;
   keywords: string[];
   badgeText?: string;
+  imageUrl?: string;
+  imageAlt?: string;
+  imageCaption?: string;
 }
 
 export interface TreatmentCategory {

@@ -30,6 +30,7 @@ export const TreatmentDetailPage: React.FC<TreatmentDetailPageProps> = ({ onOpen
     "@type": "MedicalWebPage",
     "name": treatment.title,
     "description": treatment.seoDescription,
+    "image": treatment.imageUrl ? `https://athreehospital.com${treatment.imageUrl}` : undefined,
     "about": {
       "@type": "MedicalCondition",
       "name": treatment.title,
@@ -140,31 +141,49 @@ export const TreatmentDetailPage: React.FC<TreatmentDetailPageProps> = ({ onOpen
             </div>
 
             <div className="lg:col-span-5">
-              <div className="rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm bg-slate-50 relative group">
-                <div className="aspect-[16/10] sm:aspect-[4/3] md:aspect-[16/10] w-full overflow-hidden bg-slate-100 relative">
+              <div className="rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm bg-white relative group">
+                {/* Responsive Non-Cropping Treatment Image Presentation */}
+                <div className="relative w-full h-[280px] xs:h-[320px] sm:h-[350px] md:h-[380px] lg:h-[400px] overflow-hidden bg-slate-950 flex items-center justify-center select-none">
+                  {/* Ambient blurred backdrop matching the image so the container is filled gracefully */}
                   <img
-                    src={
-                      treatment.categoryId === 'general-surgery'
-                        ? 'https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=800&q=80'
-                        : treatment.categoryId === 'womens-health'
-                        ? 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80'
-                        : 'https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=800&q=80'
-                    }
-                    alt={`${treatment.title} care and consultation at Athree Hospital`}
-                    loading="lazy"
-                    decoding="async"
-                    width="800"
-                    height="500"
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    src={treatment.imageUrl || `/assets/treatments/${treatment.slug}.jpg`}
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 w-full h-full object-cover blur-2xl opacity-40 scale-125 pointer-events-none select-none"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
-                  <div className="absolute bottom-2.5 left-3 right-3 text-white text-xs font-semibold drop-shadow-xs">
-                    Bengaluru Surgical Center
+
+                  {/* Fully visible, uncropped medical photography / diagnostic scan */}
+                  <picture className="relative z-10 w-full h-full flex items-center justify-center p-2.5 sm:p-4">
+                    <source srcSet={`/assets/treatments/${treatment.slug}.webp`} type="image/webp" />
+                    <img
+                      src={treatment.imageUrl || `/assets/treatments/${treatment.slug}.jpg`}
+                      alt={treatment.imageAlt || `${treatment.title} care and consultation at Athree Hospital`}
+                      loading="lazy"
+                      decoding="async"
+                      className="max-w-full max-h-full w-auto h-auto object-contain rounded-xl drop-shadow-lg transition-transform duration-300 group-hover:scale-[1.02]"
+                    />
+                  </picture>
+
+                  {/* Gradient shadow for caption readability */}
+                  <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-slate-950/85 via-slate-950/40 to-transparent pointer-events-none z-15" />
+
+                  {/* Dynamic caption & accreditation badge */}
+                  <div className="absolute bottom-3 left-3.5 right-3.5 text-white text-xs font-semibold drop-shadow-md z-20 flex items-center justify-between pointer-events-none">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900/90 backdrop-blur-md border border-white/15 text-cyan-300 font-medium text-[11px] sm:text-xs">
+                      {treatment.imageCaption || 'Bengaluru Surgical Center'}
+                    </span>
+                    <span className="hidden sm:inline-block px-2 py-0.5 rounded text-[11px] bg-slate-800/80 backdrop-blur-md text-slate-300 border border-white/10 font-normal">
+                      Athree Hospital Bengaluru
+                    </span>
                   </div>
                 </div>
-                <div className="p-3 bg-white border-t border-slate-100 flex items-center justify-between text-xs text-slate-600">
+
+                <div className="p-3 sm:p-3.5 bg-white border-t border-slate-100 flex items-center justify-between text-xs text-slate-600">
                   <span className="font-semibold text-slate-900">{treatment.categoryTitle}</span>
-                  <span className="text-cyan-700 font-medium">Minimally Invasive Care</span>
+                  <span className="text-cyan-700 font-medium flex items-center gap-1">
+                    <ShieldCheck className="w-3.5 h-3.5 text-cyan-600" />
+                    Minimally Invasive Care
+                  </span>
                 </div>
               </div>
             </div>
