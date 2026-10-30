@@ -142,8 +142,8 @@ export const TreatmentDetailPage: React.FC<TreatmentDetailPageProps> = ({ onOpen
 
             <div className="lg:col-span-5">
               <div className="rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm bg-white relative group">
-                {/* Responsive Non-Cropping Treatment Image Presentation */}
-                <div className="relative w-full h-[280px] xs:h-[320px] sm:h-[350px] md:h-[380px] lg:h-[400px] overflow-hidden bg-slate-950 flex items-center justify-center select-none">
+                {/* Responsive Non-Cropping Treatment Image Presentation (16:9 Standard) */}
+                <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] overflow-hidden bg-slate-950 flex items-center justify-center select-none">
                   {/* Ambient blurred backdrop matching the image so the container is filled gracefully */}
                   <img
                     src={treatment.imageUrl || `/assets/treatments/${treatment.slug}.jpg`}
