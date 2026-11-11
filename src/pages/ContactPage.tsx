@@ -13,7 +13,7 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
     <div className="min-h-screen bg-slate-50 py-12">
       <SeoHead
         title="Contact Us & Book Appointment | Athree Hospital Bengaluru"
-        description="Contact Athree Hospital in Bengaluru. Call +91 74835 20200 or book consultations online & via WhatsApp for General Surgery, Women's Health & Spine care."
+        description="Contact Athree Hospital in Bengaluru. Call +91 94296 90689 or book consultations online & via WhatsApp for General Surgery, Women's Health & Spine care."
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">

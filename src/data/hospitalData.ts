@@ -4,9 +4,9 @@ export const ATHREE_HOSPITAL_CONFIG: HospitalConfig = {
   name: "Athree Hospital",
   tagline: "Experience The Excellence",
   parentCompany: "A Unit of SRI SRINIVASA THERAPEUTIC SERVICES PVT LTD.",
-  phone: "+91 74835 20200",
-  phoneFormatted: "+917483520200",
-  whatsapp: "917483520200",
+  phone: "+91 94296 90689",
+  phoneFormatted: "+919429690689",
+  whatsapp: "919429690689",
   email: "care@athreehospital.com",
   address: {
     street: "1367 29th Main, Poornaprajna Layout, Uttarahalli Hobli",
@@ -253,7 +253,7 @@ export const TREATMENTS: Record<string, EnhancedTreatment> = {
       'Abdominal swelling, tenderness, or muscle guarding on the right side'
     ],
     whenToConsult: [
-      'EMERGENCY WARNING: Sudden severe pain in the lower right abdomen (Call our 24/7 emergency helpline immediately at +91 74835 20200)',
+      'EMERGENCY WARNING: Sudden severe pain in the lower right abdomen (Call our 24/7 emergency helpline immediately at +91 94296 90689)',
       'Abdominal pain accompanied by vomiting, high fever, or inability to stand upright',
       'Tenderness that worsens when pressure on the lower right belly is released',
       'Never take strong laxatives or pain relievers before a doctor checks your belly, as this can mask critical signs'
@@ -1179,7 +1179,7 @@ export const HOSPITAL_FACILITIES = [
 export const GENERAL_FAQS: FAQ[] = [
   {
     question: 'How do I book a consultation at Athree Hospital?',
-    answer: 'You can easily book an appointment by filling out the online appointment form on this website, calling our helpline at +91 74835 20200, or messaging us directly on WhatsApp at +91 74835 20200.'
+    answer: 'You can easily book an appointment by filling out the online appointment form on this website, calling our helpline at +91 94296 90689, or messaging us directly on WhatsApp at +91 94296 90689.'
   },
   {
     question: 'What information should I bring to my appointment?',
@@ -1195,7 +1195,7 @@ export const GENERAL_FAQS: FAQ[] = [
   },
   {
     question: 'How can I contact Athree Hospital for emergency or queries?',
-    answer: 'Our emergency service operates 24/7. You can call our direct helpline at +91 74835 20200 or visit our hospital at Poornaprajna Layout, Uttarahalli Hobli, Bengaluru.'
+    answer: 'Our emergency service operates 24/7. You can call our direct helpline at +91 94296 90689 or visit our hospital at Poornaprajna Layout, Uttarahalli Hobli, Bengaluru.'
   }
 ];
 
